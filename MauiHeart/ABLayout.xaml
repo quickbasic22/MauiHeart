@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiHeart.ABLayout"
+             Title="AbsoluteLayout Demo">
+
+    <ScrollView>
+        <AbsoluteLayout>
+            <BoxView Color="Red"
+                 AbsoluteLayout.LayoutBounds="0,0,200,200"
+                 AbsoluteLayout.LayoutFlags="YProportional" />
+            <BoxView Color="Green"
+                 AbsoluteLayout.LayoutBounds="500,500,200,200"
+                 AbsoluteLayout.LayoutFlags="None" />
+            <BoxView Color="Blue"
+                 AbsoluteLayout.LayoutBounds="0.2,0.2,0.2,0.2"
+                 AbsoluteLayout.LayoutFlags="All" />
+            <BoxView Color="Yellow"
+                 AbsoluteLayout.LayoutBounds="0.4,0.4,0.2,0.2"
+                 AbsoluteLayout.LayoutFlags="All" />
+            <BoxView Color="Purple"
+                 AbsoluteLayout.LayoutBounds="0.8,0.8,0.2,0.2"
+                 AbsoluteLayout.LayoutFlags="All" />
+        </AbsoluteLayout>
+    </ScrollView>
+
+</ContentPage>

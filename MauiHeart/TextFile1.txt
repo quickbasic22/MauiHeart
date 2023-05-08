@@ -1,0 +1,185 @@
+﻿using Microsoft.Maui.Controls.Shapes;
+using Microsoft.Maui.Controls;
+
+namespace MauiHeart;
+
+public partial class MovingControlPoints : ContentPage
+{
+    Point startPnt = new Point();
+
+    Point LeftPnt1 = new Point();
+    Point LeftPnt2 = new Point();
+    Point LeftPnt3 = new Point();
+
+    Point RightPnt1 = new Point();
+    Point RightPnt2 = new Point();
+    Point RightPnt3 = new Point();
+
+
+    public MovingControlPoints()
+	{
+		InitializeComponent();
+        StartPointX.Minimum = -2000.0;
+        StartPointY.Minimum = -2000.0;
+        StartPointX.Maximum = 2000.0;
+        StartPointY.Maximum = 2000.0;
+        LeftPointX1.Minimum = -2000.0;
+        LeftPointX1.Maximum = 2000.0;
+        LeftPointY1.Minimum = -2000.0;
+        LeftPointY1.Maximum = 2000.0;
+        LeftPointX2.Minimum = -2000.0;
+        LeftPointX2.Maximum = 2000.0;
+        LeftPointY2.Minimum = -2000.0;
+        LeftPointY2.Maximum = 2000.0;
+        LeftPointX3.Minimum = -2000.0;
+        LeftPointX3.Maximum = 2000.0;
+        LeftPointY3.Minimum = -2000.0;
+        LeftPointY3.Maximum = 2000.0;
+        RightPointX1.Minimum = -2000.0;
+        RightPointX1.Maximum = 2000.0;
+        RightPointY1.Minimum = -2000.0;
+        RightPointY1.Maximum = 2000.0;
+        RightPointX2.Minimum = -2000.0;
+        RightPointX2.Maximum = 2000.0;
+        RightPointY2.Minimum = -2000.0;
+        RightPointY2.Maximum = 2000.0;
+        RightPointX3.Minimum = -2000.0;
+        RightPointX3.Maximum = 2000.0;
+        RightPointY3.Minimum = -2000.0;
+        RightPointY3.Maximum = 2000.0;
+
+        StartPointX.Value = 800.0;
+        StartPointY.Value = 400.0;
+        LeftPointX1.Value = 625.0;
+        LeftPointY1.Value = 0.0;
+        LeftPointX2.Value = 444.0;
+        LeftPointY2.Value = 224.0;
+        LeftPointX3.Value = 800.0;
+        LeftPointY3.Value = 700.0;
+        RightPointX1.Value = 985.0;
+        RightPointY1.Value = 0.0;
+        RightPointX2.Value = 1166.0;
+        RightPointY2.Value = 221.0;
+        RightPointX3.Value = 800.0;
+        RightPointY3.Value = 700.0;
+
+        startPnt.X = StartPointX.Value;
+        startPnt.Y = StartPointY.Value;
+        LeftPnt1.X = LeftPointX1.Value;
+        LeftPnt1.Y = LeftPointY1.Value;
+        LeftPnt2.X = LeftPointX2.Value;
+        LeftPnt2.Y = LeftPointY2.Value;
+        LeftPnt3.X = LeftPointX3.Value;
+        LeftPnt3.Y = LeftPointY3.Value;
+
+        RightPnt1.X = RightPointX1.Value;
+        RightPnt1.Y = RightPointY1.Value;
+        RightPnt2.X = RightPointX2.Value;
+        RightPnt2.Y = RightPointY2.Value;
+        RightPnt3.X = RightPointX3.Value;
+        RightPnt3.Y = RightPointY3.Value;
+        
+
+
+
+        Microsoft.Maui.Controls.Shapes.PathFigure figure1 = new Microsoft.Maui.Controls.Shapes.PathFigure();
+        figure1.StartPoint = startPnt;
+        figure1.Segments.Add(new BezierSegment(LeftPnt1, LeftPnt2, LeftPnt3));
+        figure1.Segments.Add(new BezierSegment(RightPnt1, RightPnt2, RightPnt3));
+        figure1.Segments.Add(new LineSegment(RightPnt3));
+
+        Microsoft.Maui.Controls.Shapes.PathFigureCollection figureCollection = new Microsoft.Maui.Controls.Shapes.PathFigureCollection();
+        figureCollection.Add(figure1);
+        Microsoft.Maui.Controls.Shapes.PathGeometry pathGeometry = new Microsoft.Maui.Controls.Shapes.PathGeometry(figureCollection);
+        Microsoft.Maui.Controls.Shapes.Path firstHeart = new Microsoft.Maui.Controls.Shapes.Path(pathGeometry);
+        firstHeart.StrokeThickness = 2.0;
+        firstHeart.Stroke = Colors.Red;
+        firstHeart.Fill = Colors.Red;
+       
+        VerticalStack.Add(firstHeart);
+
+    }
+
+    private void LeftPointX1_ValueChanged(object sender, ValueChangedEventArgs e)
+    {
+        Label1.Text = "";
+        Label1.Text += e.NewValue.ToString() + "\n\r";
+    }
+
+    private void LeftPointX2_ValueChanged(object sender, ValueChangedEventArgs e)
+    {
+        Label1.Text = "";
+        Label1.Text += e.NewValue.ToString() + "\n\r";
+    }
+
+    private void LeftPointX3_ValueChanged(object sender, ValueChangedEventArgs e)
+    {
+        Label1.Text = "";
+        Label1.Text += e.NewValue.ToString() + "\n\r";
+    }
+
+    private void LeftPointY1_ValueChanged(object sender, ValueChangedEventArgs e)
+    {
+        Label1.Text = "";
+        Label1.Text += e.NewValue.ToString() + "\n\r";
+    }
+
+    private void LeftPointY2_ValueChanged(object sender, ValueChangedEventArgs e)
+    {
+        Label1.Text = "";
+        Label1.Text += e.NewValue.ToString() + "\n\r";
+    }
+
+    private void LeftPointY3_ValueChanged(object sender, ValueChangedEventArgs e)
+    {
+        Label1.Text = "";
+        Label1.Text += e.NewValue.ToString() + "\n\r";
+    }
+
+    private void RightPointX1_ValueChanged(object sender, ValueChangedEventArgs e)
+    {
+        Label1.Text = "";
+        Label1.Text += e.NewValue.ToString() + "\n\r";
+    }
+
+    private void RightPointX2_ValueChanged(object sender, ValueChangedEventArgs e)
+    {
+        Label1.Text = "";
+        Label1.Text += e.NewValue.ToString() + "\n\r";
+    }
+
+    private void RightPointX3_ValueChanged(object sender, ValueChangedEventArgs e)
+    {
+        Label1.Text = "";
+        Label1.Text += e.NewValue.ToString() + "\n\r";
+    }
+
+    private void RightPointY1_ValueChanged(object sender, ValueChangedEventArgs e)
+    {
+        Label1.Text = "";
+        Label1.Text += e.NewValue.ToString() + "\n\r";
+    }
+
+    private void RightPointY2_ValueChanged(object sender, ValueChangedEventArgs e)
+    {
+        Label1.Text = "";
+        Label1.Text += e.NewValue.ToString() + "\n\r";
+    }
+
+    private void RightPointY3_ValueChanged(object sender, ValueChangedEventArgs e)
+    {
+        Label1.Text = "";
+        Label1.Text += e.NewValue.ToString() + "\n\r";
+    }
+    private void StartPointX_ValueChanged(object sender, ValueChangedEventArgs e)
+    {
+        Label1.Text = "";
+        Label1.Text += e.NewValue.ToString() + "\n\r";
+    }
+
+    private void StartPointY_ValueChanged(object sender, ValueChangedEventArgs e)
+    {
+        Label1.Text = "";
+        Label1.Text += e.NewValue.ToString() + "\n\r";
+    }
+}

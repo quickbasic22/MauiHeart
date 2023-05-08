@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiHeart.HeartShapedBox"
+             Title="HeartShapedBox">
+
+    <ScrollView>
+
+        
+            <VerticalStackLayout x:Name="MyVerticalStackLayout">
+                <VerticalStackLayout.GestureRecognizers>
+                    <PointerGestureRecognizer PointerMoved="PointerGestureRecognizer_PointerMoved" />
+                </VerticalStackLayout.GestureRecognizers>
+               <AbsoluteLayout>
+                <Label AbsoluteLayout.LayoutBounds="0, 100, 200, 200" AbsoluteLayout.LayoutFlags="SizeProportional"  x:Name="Label1" Text="{Binding Source={Reference ThisBoxView1}, Path=IsVisible, StringFormat='X = {0}'}" FontSize="Large" TextColor="Blue" />
+                <Label AbsoluteLayout.LayoutBounds="0, 200, 200, 200" AbsoluteLayout.LayoutFlags="SizeProportional" x:Name="Label2" Text="{Binding Source={Reference ThisBoxView1}, Path=IsEnabled, StringFormat='Y = {0}'}" FontSize="Large" TextColor="OrangeRed" />
+                <Label AbsoluteLayout.LayoutBounds="0, 300, 200, 200" AbsoluteLayout.LayoutFlags="SizeProportional" x:Name="Label3" Text="Hello World" FontSize="Large" TextColor="GreenYellow" />
+                <Label AbsoluteLayout.LayoutBounds="0, 400, 200, 200" AbsoluteLayout.LayoutFlags="SizeProportional" x:Name="Label4" Text="Hello World" FontSize="Large" TextColor="Blue" />
+                <Label AbsoluteLayout.LayoutBounds="0, 500, 200, 200" AbsoluteLayout.LayoutFlags="SizeProportional" x:Name="Label5" Text="Hello World" FontSize="Large" TextColor="OrangeRed" />
+                <Label AbsoluteLayout.LayoutBounds="0, 600, 200, 200" AbsoluteLayout.LayoutFlags="SizeProportional" x:Name="Label6" Text="Hello World" FontSize="Large" TextColor="GreenYellow" />
+
+                <BoxView  AbsoluteLayout.LayoutBounds="100, 100" x:Name="ThisBoxView1" WidthRequest="10" HeightRequest="10" BackgroundColor="Blue" Margin="50, 100">
+                    <BoxView.GestureRecognizers>
+                        <PointerGestureRecognizer PointerMoved="PointerGestureRecognizer_PointerMoved_1" />
+                    </BoxView.GestureRecognizers>
+                    <!--<BoxView.Triggers>
+                <DataTrigger TargetType="Label" Binding="{Binding Source={x:Reference ThisBoxView1}, Path=IsVisible}" Value="True">
+                    <Setter Property="Text" TargetName="Label1" Value="{Binding Source={x:Reference ThisBoxView1}, Path=TranslationX, StringFormat='X: {0}'}" />
+                    <Setter Property="Text" TargetName="Label2" Value="{Binding Source={x:Reference ThisBoxView1}, Path=TranslationY, StringFormat='Y: {0}'}" />
+                </DataTrigger>
+            </BoxView.Triggers>-->
+                </BoxView>
+                <BoxView AbsoluteLayout.LayoutBounds="100, 200" x:Name="ThisBoxView2" WidthRequest="10" HeightRequest="10" BackgroundColor="Blue" Margin="100, 200">
+                    <BoxView.GestureRecognizers>
+                        <PointerGestureRecognizer PointerMoved="PointerGestureRecognizer_PointerMoved_2" />
+                    </BoxView.GestureRecognizers>
+                    <!--<BoxView.Triggers>
+                <DataTrigger TargetType="Label" Binding="{Binding Source={x:Reference ThisBoxView2}, Path=IsVisible}" Value="True">
+                    <Setter Property="Text" TargetName="Label3" Value="{Binding Source={x:Reference ThisBoxView2}, Path=TranslationX, StringFormat='X: {0}, Y: '}" />
+                    <Setter Property="Text" TargetName="Label4" Value="{Binding Source={x:Reference ThisBoxView2}, Path=TranslationY, StringFormat='{0}'}" />
+                </DataTrigger>
+            </BoxView.Triggers>-->
+                </BoxView>
+                <BoxView AbsoluteLayout.LayoutBounds="100, 300" x:Name="ThisBoxView3" WidthRequest="10" HeightRequest="10" BackgroundColor="Blue" Margin="150, 300">
+                    <BoxView.GestureRecognizers>
+                        <PointerGestureRecognizer PointerMoved="PointerGestureRecognizer_PointerMoved_3" />
+                    </BoxView.GestureRecognizers>
+                    <!--<BoxView.Triggers>
+                <DataTrigger TargetType="Label" Binding="{Binding Source={x:Reference ThisBoxView3}, Path=IsVisible}" Value="True">
+                    <Setter Property="Text" TargetName="Label5" Value="{Binding Source={x:Reference ThisBoxView3}, Path=TranslationX, StringFormat='X: {0}, Y: '}" />
+                    <Setter Property="Text" TargetName="Label6" Value="{Binding Source={x:Reference ThisBoxView3}, Path=TranslationY, StringFormat='{0}'}" />
+                </DataTrigger>
+            </BoxView.Triggers>-->
+                </BoxView>
+            </AbsoluteLayout>
+        </VerticalStackLayout>
+       
+    </ScrollView>
+</ContentPage>

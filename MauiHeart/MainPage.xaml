@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiHeart.MainPage"
+             Title="Heart Page">
+
+
+
+    <ScrollView>
+        <VerticalStackLayout
+            x:Name="MyVerticalStackLayout"
+            Spacing="25"
+            Padding="30,0"
+            VerticalOptions="Center">
+            
+            <!--<Ellipse Fill="Blue" Stroke="Red" StrokeThickness="2" WidthRequest="500" HeightRequest="500" />-->
+
+            <!--<Path x:Name="MyPath" Stroke="Red" StrokeThickness="2" Fill="Red">
+                <Path.TranslationX>
+                    <x:Double>0</x:Double>
+                </Path.TranslationX>
+                <Path.TranslationY>
+                    <x:Double>0</x:Double>
+                </Path.TranslationY>
+                <Path.Scale>
+                    <x:Double>3.0</x:Double>
+                </Path.Scale>
+                <Path.Data>
+                    <PathGeometry>
+                        <PathFigure x:Name="MyPathFigure" StartPoint="700,125">
+                            <PathFigure.Segments>
+                                <PathSegmentCollection x:Name="pathsegmentcollection">
+                                    <BezierSegment x:Name="bezier1" Point1="670,50" Point2="640,120" Point3="700,200"/>
+                                    <BezierSegment x:Name="bezier2" Point1="760,120" Point2="730,50" Point3="700,125"/>
+                                    <LineSegment x:Name="line1" Point="700,125"/>
+                                </PathSegmentCollection>
+                            </PathFigure.Segments>
+                        </PathFigure>
+                    </PathGeometry>
+                </Path.Data>
+            </Path>-->
+
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>

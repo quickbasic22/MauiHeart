@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiHeart.MovingControlPoints"
+             Title="Moving Control Points">
+
+    <ScrollView>
+        <AbsoluteLayout x:Name="MyAbsoluteLayout">
+            <AbsoluteLayout>
+                <Label x:Name="Label1" FontSize="Large" TextColor="Blue" AbsoluteLayout.LayoutBounds="0,0,AutoSize,AutoSize"/>
+                <Label Text="Starting Point" AbsoluteLayout.LayoutBounds="0,50,AutoSize,AutoSize"/>
+                <Stepper x:Name="StartPointX" ValueChanged="StartPointX_ValueChanged" AbsoluteLayout.LayoutBounds="0,100,AutoSize,AutoSize"/>
+                <Stepper x:Name="StartPointY" ValueChanged="StartPointY_ValueChanged" AbsoluteLayout.LayoutBounds="0,150,AutoSize,AutoSize"/>
+
+                <Label Text="LeftPoint1" AbsoluteLayout.LayoutBounds="0,200,AutoSize,AutoSize"/>
+                <Stepper x:Name="LeftPointX1" ValueChanged="LeftPointX1_ValueChanged" AbsoluteLayout.LayoutBounds="0,250,AutoSize,AutoSize"/>
+                <Stepper x:Name="LeftPointY1" ValueChanged="LeftPointY1_ValueChanged" AbsoluteLayout.LayoutBounds="0,300,AutoSize,AutoSize"/>
+                <Label Text="LeftPoint2" AbsoluteLayout.LayoutBounds="0,350,AutoSize,AutoSize"/>
+                <Stepper x:Name="LeftPointX2" ValueChanged="LeftPointX2_ValueChanged" AbsoluteLayout.LayoutBounds="0,400,AutoSize,AutoSize"/>
+                <Stepper x:Name="LeftPointY2" ValueChanged="LeftPointY2_ValueChanged" AbsoluteLayout.LayoutBounds="0,450,AutoSize,AutoSize"/>
+                <Label Text="LeftPoint3" AbsoluteLayout.LayoutBounds="0,500,AutoSize,AutoSize"/>
+                <Stepper x:Name="LeftPointX3" ValueChanged="LeftPointX3_ValueChanged" AbsoluteLayout.LayoutBounds="0,550,AutoSize,AutoSize"/>
+                <Stepper x:Name="LeftPointY3" ValueChanged="LeftPointY3_ValueChanged" AbsoluteLayout.LayoutBounds="0,600,AutoSize,AutoSize"/>
+
+                <Label Text="RightPoint1" AbsoluteLayout.LayoutBounds="0,650,AutoSize,AutoSize"/>
+                <Stepper x:Name="RightPointX1" ValueChanged="RightPointX1_ValueChanged" AbsoluteLayout.LayoutBounds="0,700,AutoSize,AutoSize"/>
+                <Stepper x:Name="RightPointY1" ValueChanged="RightPointY1_ValueChanged" AbsoluteLayout.LayoutBounds="0,750,AutoSize,AutoSize"/>
+                <Label Text="RightPoint2" AbsoluteLayout.LayoutBounds="0,800,AutoSize,AutoSize"/>
+                <Stepper x:Name="RightPointX2" ValueChanged="RightPointX2_ValueChanged" AbsoluteLayout.LayoutBounds="0,850,AutoSize,AutoSize"/>
+                <Stepper x:Name="RightPointY2" ValueChanged="RightPointY2_ValueChanged" AbsoluteLayout.LayoutBounds="0,900,AutoSize,AutoSize"/>
+                <Label Text="RightPoint3" AbsoluteLayout.LayoutBounds="0,950,AutoSize,AutoSize"/>
+                <Stepper x:Name="RightPointX3" ValueChanged="RightPointX3_ValueChanged" AbsoluteLayout.LayoutBounds="0,1000,AutoSize,AutoSize"/>
+                <Stepper x:Name="RightPointY3" ValueChanged="RightPointY3_ValueChanged" AbsoluteLayout.LayoutBounds="0,1050,AutoSize,AutoSize"/>
+            </AbsoluteLayout>
+
+        </AbsoluteLayout>
+    </ScrollView>
+</ContentPage>
