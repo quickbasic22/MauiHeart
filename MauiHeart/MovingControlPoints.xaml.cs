@@ -16,6 +16,7 @@ public partial class MovingControlPoints : ContentPage
     Point RightPnt2 = new Point();
     Point RightPnt3 = new Point();
     Microsoft.Maui.Controls.Shapes.Path firstHeart;
+    Button myButton;
 
 
     public MovingControlPoints()
@@ -231,17 +232,17 @@ public partial class MovingControlPoints : ContentPage
     {
         
         MyAbsoluteLayout.Children.Clear();
+        
 
         Label1 = new Label
         {
             Text = "Heart Bezier Path Example",
-            FontSize = 30,
+            FontSize = 24,
             TextColor = Colors.Red,
             BackgroundColor = Colors.Yellow,
-            HorizontalOptions = LayoutOptions.Center
         };
 
-        AbsoluteLayout.SetLayoutBounds(Label1, new Rect(0.5, 0.05, AbsoluteLayout.AutoSize, AbsoluteLayout.AutoSize));
+        AbsoluteLayout.SetLayoutBounds(Label1, new Rect(0.0, 0.05,100.0, 100.0));
         AbsoluteLayout.SetLayoutFlags(Label1, AbsoluteLayoutFlags.PositionProportional);
 
         Label startingPointLabel = new Label
@@ -251,7 +252,7 @@ public partial class MovingControlPoints : ContentPage
             TextColor = Colors.Black
         };
 
-        AbsoluteLayout.SetLayoutBounds(startingPointLabel, new Rect(0, 0.15, AbsoluteLayout.AutoSize, AbsoluteLayout.AutoSize));
+        AbsoluteLayout.SetLayoutBounds(startingPointLabel, new Rect(0, 0.15, 100.0, 100.0));
         AbsoluteLayout.SetLayoutFlags(startingPointLabel, AbsoluteLayoutFlags.PositionProportional);
 
         StartPointX = new Stepper
@@ -264,7 +265,7 @@ public partial class MovingControlPoints : ContentPage
 
         StartPointX.ValueChanged += StartPointX_ValueChanged;
 
-        AbsoluteLayout.SetLayoutBounds(StartPointX, new Rect(0.3, 0.2, AbsoluteLayout.AutoSize, AbsoluteLayout.AutoSize));
+        AbsoluteLayout.SetLayoutBounds(StartPointX, new Rect(0.0, 0.2, 100.0, 100.0));
         AbsoluteLayout.SetLayoutFlags(StartPointX, AbsoluteLayoutFlags.PositionProportional);
 
         StartPointY = new Stepper
@@ -276,7 +277,7 @@ public partial class MovingControlPoints : ContentPage
         };
         StartPointY.ValueChanged += StartPointY_ValueChanged;
 
-        AbsoluteLayout.SetLayoutBounds(StartPointY, new Rect(0.7, 0.2, AbsoluteLayout.AutoSize, AbsoluteLayout.AutoSize));
+        AbsoluteLayout.SetLayoutBounds(StartPointY, new Rect(0.0, 0.25, 100.0, 100.0));
         AbsoluteLayout.SetLayoutFlags(StartPointY, AbsoluteLayoutFlags.PositionProportional);
 
         Label leftPoint1Label = new Label
@@ -286,7 +287,7 @@ public partial class MovingControlPoints : ContentPage
             TextColor = Colors.Black
         };
 
-        AbsoluteLayout.SetLayoutBounds(leftPoint1Label, new Rect(0, 0.35, AbsoluteLayout.AutoSize, AbsoluteLayout.AutoSize));
+        AbsoluteLayout.SetLayoutBounds(leftPoint1Label, new Rect(0, 0.30, 100.0, 100.0));
         AbsoluteLayout.SetLayoutFlags(leftPoint1Label, AbsoluteLayoutFlags.PositionProportional);
 
         LeftPointX1 = new Stepper
@@ -299,7 +300,7 @@ public partial class MovingControlPoints : ContentPage
 
         LeftPointX1.ValueChanged += LeftPointX1_ValueChanged;
 
-        AbsoluteLayout.SetLayoutBounds(LeftPointX1, new Rect(0.3, 0.4, AbsoluteLayout.AutoSize, AbsoluteLayout.AutoSize));
+        AbsoluteLayout.SetLayoutBounds(LeftPointX1, new Rect(0.0, 0.35, 100.0, 100.0));
         AbsoluteLayout.SetLayoutFlags(LeftPointX1, AbsoluteLayoutFlags.PositionProportional);
 
         LeftPointY1 = new Stepper
@@ -311,7 +312,7 @@ public partial class MovingControlPoints : ContentPage
         };
         LeftPointY1.ValueChanged += LeftPointY1_ValueChanged;
 
-        AbsoluteLayout.SetLayoutBounds(LeftPointY1, new Rect(0.7, 0.4, AbsoluteLayout.AutoSize, AbsoluteLayout.AutoSize));
+        AbsoluteLayout.SetLayoutBounds(LeftPointY1, new Rect(0.0, 0.4, 100.0, 100.0));
         AbsoluteLayout.SetLayoutFlags(LeftPointY1, AbsoluteLayoutFlags.PositionProportional);
 
         Label leftPoint2Label = new Label
@@ -321,7 +322,7 @@ public partial class MovingControlPoints : ContentPage
             TextColor = Colors.Black
         };
 
-        AbsoluteLayout.SetLayoutBounds(leftPoint2Label, new Rect(0, 0.55, AbsoluteLayout.AutoSize, AbsoluteLayout.AutoSize));
+        AbsoluteLayout.SetLayoutBounds(leftPoint2Label, new Rect(0.0, 0.45, 100.0, 100.0));
         AbsoluteLayout.SetLayoutFlags(leftPoint2Label, AbsoluteLayoutFlags.PositionProportional);
 
         LeftPointX2 = new Stepper
@@ -334,7 +335,7 @@ public partial class MovingControlPoints : ContentPage
 
         LeftPointX2.ValueChanged += LeftPointX2_ValueChanged;
 
-        AbsoluteLayout.SetLayoutBounds(LeftPointX2, new Rect(0.3, 0.6, AbsoluteLayout.AutoSize, AbsoluteLayout.AutoSize));
+        AbsoluteLayout.SetLayoutBounds(LeftPointX2, new Rect(0.0, 0.50, 100.0, 100.0));
         AbsoluteLayout.SetLayoutFlags(LeftPointX2, AbsoluteLayoutFlags.PositionProportional);
 
         LeftPointY2 = new Stepper
@@ -346,7 +347,7 @@ public partial class MovingControlPoints : ContentPage
         };
         LeftPointY2.ValueChanged += LeftPointY2_ValueChanged;
 
-        AbsoluteLayout.SetLayoutBounds(LeftPointY2, new Rect(0.3, 0.6, AbsoluteLayout.AutoSize, AbsoluteLayout.AutoSize));
+        AbsoluteLayout.SetLayoutBounds(LeftPointY2, new Rect(0.0, 0.55, 100.0, 100.0));
         AbsoluteLayout.SetLayoutFlags(LeftPointY2, AbsoluteLayoutFlags.PositionProportional);
 
         Label leftPoint3Label = new Label
@@ -356,7 +357,7 @@ public partial class MovingControlPoints : ContentPage
             TextColor = Colors.Black
         };
 
-        AbsoluteLayout.SetLayoutBounds(leftPoint3Label, new Rect(0, 0.55, AbsoluteLayout.AutoSize, AbsoluteLayout.AutoSize));
+        AbsoluteLayout.SetLayoutBounds(leftPoint3Label, new Rect(0, 0.60, 100.0, 100.0));
         AbsoluteLayout.SetLayoutFlags(leftPoint3Label, AbsoluteLayoutFlags.PositionProportional);
 
         LeftPointX3 = new Stepper
@@ -369,7 +370,7 @@ public partial class MovingControlPoints : ContentPage
 
         LeftPointX3.ValueChanged += LeftPointX3_ValueChanged;
 
-        AbsoluteLayout.SetLayoutBounds(LeftPointX3, new Rect(0.3, 0.6, AbsoluteLayout.AutoSize, AbsoluteLayout.AutoSize));
+        AbsoluteLayout.SetLayoutBounds(LeftPointX3, new Rect(0.0, 0.65, 100.0, 100.0));
         AbsoluteLayout.SetLayoutFlags(LeftPointX3, AbsoluteLayoutFlags.PositionProportional);
 
         LeftPointY3 = new Stepper
@@ -382,7 +383,7 @@ public partial class MovingControlPoints : ContentPage
 
         LeftPointY3.ValueChanged += LeftPointY3_ValueChanged;
 
-        AbsoluteLayout.SetLayoutBounds(LeftPointY3, new Rect(0.7, 0.4, AbsoluteLayout.AutoSize, AbsoluteLayout.AutoSize));
+        AbsoluteLayout.SetLayoutBounds(LeftPointY3, new Rect(0.0, 0.70, 100.0, 100.0));
         AbsoluteLayout.SetLayoutFlags(LeftPointY3, AbsoluteLayoutFlags.PositionProportional);
 
         Label rightPoint1Label = new Label
@@ -392,7 +393,7 @@ public partial class MovingControlPoints : ContentPage
             TextColor = Colors.Black
         };
 
-        AbsoluteLayout.SetLayoutBounds(rightPoint1Label, new Rect(0, 0.35, AbsoluteLayout.AutoSize, AbsoluteLayout.AutoSize));
+        AbsoluteLayout.SetLayoutBounds(rightPoint1Label, new Rect(0.0, 0.75, 100.0, 100.0));
         AbsoluteLayout.SetLayoutFlags(rightPoint1Label, AbsoluteLayoutFlags.PositionProportional);
 
         RightPointX1 = new Stepper
@@ -405,7 +406,7 @@ public partial class MovingControlPoints : ContentPage
 
         RightPointX1.ValueChanged += RightPointX1_ValueChanged;
 
-        AbsoluteLayout.SetLayoutBounds(RightPointX1, new Rect(0.3, 0.4, AbsoluteLayout.AutoSize, AbsoluteLayout.AutoSize));
+        AbsoluteLayout.SetLayoutBounds(RightPointX1, new Rect(0.0, 0.80, 100.0, 100.0));
         AbsoluteLayout.SetLayoutFlags(RightPointX1, AbsoluteLayoutFlags.PositionProportional);
 
         RightPointY1 = new Stepper
@@ -418,7 +419,7 @@ public partial class MovingControlPoints : ContentPage
 
         RightPointY1.ValueChanged += RightPointY1_ValueChanged;
 
-        AbsoluteLayout.SetLayoutBounds(RightPointY1, new Rect(0.7, 0.4, AbsoluteLayout.AutoSize, AbsoluteLayout.AutoSize));
+        AbsoluteLayout.SetLayoutBounds(RightPointY1, new Rect(0.0, 0.85, 100.0, 100.0));
         AbsoluteLayout.SetLayoutFlags(RightPointY1, AbsoluteLayoutFlags.PositionProportional);
 
         Label rightPoint2Label = new Label
@@ -428,7 +429,7 @@ public partial class MovingControlPoints : ContentPage
             TextColor = Colors.Black
         };
 
-        AbsoluteLayout.SetLayoutBounds(rightPoint2Label, new Rect(0, 0.55, AbsoluteLayout.AutoSize, AbsoluteLayout.AutoSize));
+        AbsoluteLayout.SetLayoutBounds(rightPoint2Label, new Rect(0.0, 0.90, 100.0, 100.0));
         AbsoluteLayout.SetLayoutFlags(rightPoint2Label, AbsoluteLayoutFlags.PositionProportional);
 
         RightPointX2 = new Stepper
@@ -441,7 +442,7 @@ public partial class MovingControlPoints : ContentPage
 
         RightPointX2.ValueChanged += RightPointX2_ValueChanged;
 
-        AbsoluteLayout.SetLayoutBounds(RightPointX2, new Rect(0.3, 0.6, AbsoluteLayout.AutoSize, AbsoluteLayout.AutoSize));
+        AbsoluteLayout.SetLayoutBounds(RightPointX2, new Rect(0.0, 0.95, 100.0, 100.0));
         AbsoluteLayout.SetLayoutFlags(RightPointX2, AbsoluteLayoutFlags.PositionProportional);
 
         RightPointY2 = new Stepper
@@ -453,7 +454,7 @@ public partial class MovingControlPoints : ContentPage
         };
         RightPointY2.ValueChanged += RightPointY2_ValueChanged;
 
-        AbsoluteLayout.SetLayoutBounds(RightPointY2, new Rect(0.3, 0.6, AbsoluteLayout.AutoSize, AbsoluteLayout.AutoSize));
+        AbsoluteLayout.SetLayoutBounds(RightPointY2, new Rect(0.0, 1.0, 100.0, 100.0));
         AbsoluteLayout.SetLayoutFlags(RightPointY2, AbsoluteLayoutFlags.PositionProportional);
 
         Label rightPoint3Label = new Label
@@ -463,7 +464,7 @@ public partial class MovingControlPoints : ContentPage
             TextColor = Colors.Black
         };
 
-        AbsoluteLayout.SetLayoutBounds(rightPoint3Label, new Rect(0, 0.55, AbsoluteLayout.AutoSize, AbsoluteLayout.AutoSize));
+        AbsoluteLayout.SetLayoutBounds(rightPoint3Label, new Rect(0.0, 1.05, 100.0, 100.0));
         AbsoluteLayout.SetLayoutFlags(rightPoint3Label, AbsoluteLayoutFlags.PositionProportional);
 
         RightPointX3 = new Stepper
@@ -476,7 +477,7 @@ public partial class MovingControlPoints : ContentPage
 
         RightPointX3.ValueChanged += RightPointX3_ValueChanged;
 
-        AbsoluteLayout.SetLayoutBounds(RightPointX3, new Rect(0.3, 0.6, AbsoluteLayout.AutoSize, AbsoluteLayout.AutoSize));
+        AbsoluteLayout.SetLayoutBounds(RightPointX3, new Rect(0.0, 1.10, 100.0, 100.0));
         AbsoluteLayout.SetLayoutFlags(RightPointX3, AbsoluteLayoutFlags.PositionProportional);
 
         RightPointY3 = new Stepper
@@ -489,8 +490,86 @@ public partial class MovingControlPoints : ContentPage
 
         RightPointY3.ValueChanged += RightPointY3_ValueChanged;
 
-        AbsoluteLayout.SetLayoutBounds(RightPointY3, new Rect(0.7, 0.4, AbsoluteLayout.AutoSize, AbsoluteLayout.AutoSize));
+        AbsoluteLayout.SetLayoutBounds(RightPointY3, new Rect(0.0, 1.15, 100.0, 100.0));
         AbsoluteLayout.SetLayoutFlags(RightPointY3, AbsoluteLayoutFlags.PositionProportional);
+
+        myButton = new Button()
+        {
+            Text = "Clear All",
+            TextColor = Colors.Blue,
+        };
+        myButton.Clicked += Button_Clicked;
+        AbsoluteLayout.SetLayoutBounds(myButton, new Rect(0.0, 1.20, 100.0, 100.0));
+        AbsoluteLayout.SetLayoutFlags(myButton, AbsoluteLayoutFlags.PositionProportional);
+
+        StartPointX.Increment = 100.0;
+        StartPointX.Minimum = -2000.0;
+        StartPointY.Minimum = -2000.0;
+        StartPointY.Increment = 100.0;
+        StartPointX.Maximum = 2000.0;
+        StartPointY.Maximum = 2000.0;
+        LeftPointX1.Minimum = -2000.0;
+        LeftPointX1.Maximum = 2000.0;
+        LeftPointY1.Minimum = -2000.0;
+        LeftPointY1.Maximum = 2000.0;
+        LeftPointX1.Increment = 100.0;
+        LeftPointX2.Minimum = -2000.0;
+        LeftPointX2.Maximum = 2000.0;
+        LeftPointY2.Minimum = -2000.0;
+        LeftPointY2.Maximum = 2000.0;
+        LeftPointY2.Increment = 100.0;
+        LeftPointX3.Minimum = -2000.0;
+        LeftPointX3.Maximum = 2000.0;
+        LeftPointY3.Minimum = -2000.0;
+        LeftPointY3.Maximum = 2000.0;
+        LeftPointY3.Increment = 100.0;
+        RightPointX1.Minimum = -2000.0;
+        RightPointX1.Maximum = 2000.0;
+        RightPointY1.Minimum = -2000.0;
+        RightPointY1.Maximum = 2000.0;
+        RightPointX1.Increment = 100.0;
+        RightPointX2.Minimum = -2000.0;
+        RightPointX2.Maximum = 2000.0;
+        RightPointY2.Minimum = -2000.0;
+        RightPointY2.Maximum = 2000.0;
+        RightPointY2.Increment = 100.0;
+        RightPointX3.Minimum = -2000.0;
+        RightPointX3.Maximum = 2000.0;
+        RightPointY3.Minimum = -2000.0;
+        RightPointY3.Maximum = 2000.0;
+        RightPointY3.Increment = 100.0;
+
+        StartPointX.Value = 800.0;
+        StartPointY.Value = 400.0;
+        LeftPointX1.Value = 625.0;
+        LeftPointY1.Value = 0.0;
+        LeftPointX2.Value = 444.0;
+        LeftPointY2.Value = 224.0;
+        LeftPointX3.Value = 800.0;
+        LeftPointY3.Value = 700.0;
+        RightPointX1.Value = 985.0;
+        RightPointY1.Value = 0.0;
+        RightPointX2.Value = 1166.0;
+        RightPointY2.Value = 221.0;
+        RightPointX3.Value = 800.0;
+        RightPointY3.Value = 700.0;
+
+        startPnt.X = StartPointX.Value;
+        startPnt.Y = StartPointY.Value;
+        LeftPnt1.X = LeftPointX1.Value;
+        LeftPnt1.Y = LeftPointY1.Value;
+        LeftPnt2.X = LeftPointX2.Value;
+        LeftPnt2.Y = LeftPointY2.Value;
+        LeftPnt3.X = LeftPointX3.Value;
+        LeftPnt3.Y = LeftPointY3.Value;
+
+        RightPnt1.X = RightPointX1.Value;
+        RightPnt1.Y = RightPointY1.Value;
+        RightPnt2.X = RightPointX2.Value;
+        RightPnt2.Y = RightPointY2.Value;
+        RightPnt3.X = RightPointX3.Value;
+        RightPnt3.Y = RightPointY3.Value;
+
 
         MyAbsoluteLayout.Children.Add(Label1);
         MyAbsoluteLayout.Children.Add(startingPointLabel);
@@ -520,7 +599,7 @@ public partial class MovingControlPoints : ContentPage
         MyAbsoluteLayout.Children.Add(rightPoint3Label);
         MyAbsoluteLayout.Children.Add(RightPointX3);
         MyAbsoluteLayout.Children.Add(RightPointY3);
-
+        MyAbsoluteLayout.Children.Add(myButton);
 
         Microsoft.Maui.Controls.Shapes.PathFigure figure1 = new Microsoft.Maui.Controls.Shapes.PathFigure();
         figure1.StartPoint = startPnt;
@@ -544,5 +623,10 @@ public partial class MovingControlPoints : ContentPage
         
         MyAbsoluteLayout.Children.Add(firstHeart);
 
+    }
+
+    private void Button_Clicked(object sender, EventArgs e)
+    {
+        MyAbsoluteLayout.Children.Clear();
     }
 }

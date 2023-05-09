@@ -31,6 +31,8 @@
                 <Label Text="RightPoint3" AbsoluteLayout.LayoutBounds="0,950,AutoSize,AutoSize"/>
                 <Stepper x:Name="RightPointX3" ValueChanged="RightPointX3_ValueChanged" AbsoluteLayout.LayoutBounds="0,1000,AutoSize,AutoSize"/>
                 <Stepper x:Name="RightPointY3" ValueChanged="RightPointY3_ValueChanged" AbsoluteLayout.LayoutBounds="0,1050,AutoSize,AutoSize"/>
+
+                <Button AbsoluteLayout.LayoutBounds="100, 200, AutoSize, AutoSize" Text="Remove All Items" Clicked="Button_Clicked" />
             </AbsoluteLayout>
 
         </AbsoluteLayout>
