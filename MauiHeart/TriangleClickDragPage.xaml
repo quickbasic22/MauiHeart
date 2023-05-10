@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiHeart.TriangleClickDragPage"
+             Title="TriangleClickDragPage">
+
+    <ScrollView>
+        <VerticalStackLayout>
+            <VerticalStackLayout.GestureRecognizers>
+                <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" NumberOfTapsRequired="1" />
+            </VerticalStackLayout.GestureRecognizers>
+            <AbsoluteLayout>
+                <Polygon Points="40,10 70,80 10,50"
+                         AbsoluteLayout.LayoutBounds="0.0, 0.10, 250.0, 250.0"
+                         AbsoluteLayout.LayoutFlags="PositionProportional"
+         x:Name="MyPolygon2"
+         Fill="AliceBlue"
+         Stroke="Green"
+         StrokeThickness="5">
+                </Polygon>
+            </AbsoluteLayout>
+            <Label x:Name="MyLabel" FontSize="Large" FontAttributes="Bold" />
+            <Polygon x:Name="MyPolygon" Points="400,100 700,800 100,500"
+         Fill="AliceBlue"
+         Stroke="Green"
+         StrokeThickness="5" Focused="Polygon_Focused">
+                <Polygon.TranslationX>
+                    <x:Double>100.0</x:Double>
+                </Polygon.TranslationX>
+                <Polygon.TranslationY>
+                    <x:Double>-300.0</x:Double>
+                </Polygon.TranslationY>
+                <Polygon.Scale>
+                    <x:Double>0.5</x:Double>
+                </Polygon.Scale>
+                <Polygon.GestureRecognizers>
+                    <PanGestureRecognizer PanUpdated="PanGestureRecognizer_PanUpdated" />
+                </Polygon.GestureRecognizers>
+            </Polygon>
+           
+            
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

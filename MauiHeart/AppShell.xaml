@@ -7,6 +7,10 @@
     Shell.FlyoutBehavior="Flyout"
     Title="Shell Page">
     <ShellContent
+        Title="TriangleClickDragPage"
+        ContentTemplate="{DataTemplate local:TriangleClickDragPage}"
+        Route="TriangleClickDragPage" />
+    <ShellContent
         Title="MovingPointsTest"
         ContentTemplate="{DataTemplate local:MovingPointsTest}"
         Route="MovingPointsTest" />
