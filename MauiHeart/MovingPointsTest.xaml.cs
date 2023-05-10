@@ -14,7 +14,7 @@ public partial class MovingPointsTest : ContentPage
     Point RightPnt1 = new Point();
     Point RightPnt2 = new Point();
     Point RightPnt3 = new Point();
-      
+    int tapCount = 0;  
         
     public MovingPointsTest()
 	{
@@ -76,8 +76,85 @@ public partial class MovingPointsTest : ContentPage
         var y = tapPosition.Value.Y + bounds.Y;
 
         // Do something with the X and Y values, e.g. display them in a label
-        myLabel.Text = $"Tapped at X:{x}, Y:{y}";
+        myLabel.Text = $"Tapped at X:{x}, Y:{y}\n\rtapCount = {tapCount}";
+        tapCount++;
+        if (tapCount == 1)
+        {
+            startPnt.X = x;
+            startPnt.Y = y;
+        }
+        else if (tapCount == 2)
+        {
+            LeftPnt1.X = x;
+            LeftPnt1.Y = y;
+        }
+        else if (tapCount == 3)
+        {
+            LeftPnt2.X = x;
+            LeftPnt2.Y = y;
+        }
+        else if (tapCount == 4)
+        {
+            LeftPnt3.X = x;
+            LeftPnt3.Y = y;
+        }
+        else if (tapCount == 5)
+        {
+            RightPnt1.X = x;
+            RightPnt1.Y = y;
+        }
+        else if (tapCount == 6)
+        {
+            RightPnt2.X = x;
+            RightPnt2.Y = y;
+        }
+        else if (tapCount == 7)
+        {
+            RightPnt3.X = x;
+            RightPnt3.Y = y;
+
+            MyLayout.Children.Clear();
+
+            Label myLabel = new Label()
+            {
+                FontSize = 24.0,
+            };
+            myLabel.Text = $"Tapped at X:{x}, Y:{y}\n\rtapCount = {tapCount}";
+
+            AbsoluteLayout.SetLayoutBounds(myLabel, new Microsoft.Maui.Graphics.Rect(0.0, 0.2, 250.0, 250.0));
+            AbsoluteLayout.SetLayoutFlags(myLabel, Microsoft.Maui.Layouts.AbsoluteLayoutFlags.PositionProportional);
+            MyLayout.Children.Add(myLabel);
+
+            Microsoft.Maui.Controls.Shapes.PathFigure figure1 = new Microsoft.Maui.Controls.Shapes.PathFigure();
+            figure1.StartPoint = startPnt;
+            figure1.Segments.Add(new BezierSegment(LeftPnt1, LeftPnt2, LeftPnt3));
+            figure1.Segments.Add(new BezierSegment(RightPnt1, RightPnt2, RightPnt3));
+            figure1.Segments.Add(new LineSegment(new Point(800.0, 850.0)));
+
+            Microsoft.Maui.Controls.Shapes.PathFigureCollection figureCollection = new Microsoft.Maui.Controls.Shapes.PathFigureCollection();
+            figureCollection.Add(figure1);
+            Microsoft.Maui.Controls.Shapes.PathGeometry pathGeometry = new Microsoft.Maui.Controls.Shapes.PathGeometry(figureCollection);
+            firstHeart = new Microsoft.Maui.Controls.Shapes.Path(pathGeometry);
+            firstHeart.StrokeThickness = 2.0;
+            firstHeart.Stroke = Colors.Red;
+            // firstHeart.Fill = Colors.Red;
 
 
+            // Set the bounds for the firstHeart element
+            AbsoluteLayout.SetLayoutBounds(firstHeart, new Microsoft.Maui.Graphics.Rect(0.0, 0.0, 1600.0, 880.0));
+            AbsoluteLayout.SetLayoutFlags(firstHeart, Microsoft.Maui.Layouts.AbsoluteLayoutFlags.None);
+
+            // Add the firstHeart element to the MyAbsoluteLayout
+            
+            MyLayout.Children.Add(firstHeart);
+
+
+            GestureRecognizer gesture = new GestureRecognizer();
+            TapGestureRecognizer tap = new TapGestureRecognizer();
+            tap.Tapped += Tap_Tapped;
+
+            MyLayout.GestureRecognizers.Add(tap);
+            tapCount = 0;
+        }
     }
 }
